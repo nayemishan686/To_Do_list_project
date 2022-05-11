@@ -32,4 +32,12 @@ class Admin
             return $taskMsg;
         }
     }
+
+    function displayTask(){
+        $query = "SELECT * FROM `goal_list`";
+        if(mysqli_query($this->conn, $query)){
+            $returnTask = mysqli_query($this->conn, $query);
+            return $returnTask;
+        }
+    }
 }

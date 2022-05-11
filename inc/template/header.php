@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -8,13 +9,19 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet">
     <style>
         html,
-        body{
+        body {
             padding: 20px 40px;
-            width: 60%;
+            width: 70%;
             margin: auto;
+        }
+
+        .table th,
+        .table td {
+            text-align: center;
         }
     </style>
     <title>Document</title>
-    
+
 </head>
+
 <body>
