@@ -40,4 +40,12 @@ class Admin
             return $returnTask;
         }
     }
+
+    function deleteTask($id){
+        $query = "DELETE FROM `goal_list` WHERE `id` = $id";
+        if(mysqli_query($this->conn,$query)){
+            $returnTask = "Task Deleted Successfully";
+            return $returnTask;
+        }
+    }
 }
