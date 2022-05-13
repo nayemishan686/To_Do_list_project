@@ -34,7 +34,7 @@ class Admin
     }
 
     function displayTask(){
-        $query = "SELECT * FROM `goal_list`";
+        $query = "SELECT * FROM `goal_list` WHERE complete = 0";
         if(mysqli_query($this->conn, $query)){
             $returnTask = mysqli_query($this->conn, $query);
             return $returnTask;
@@ -45,6 +45,22 @@ class Admin
         $query = "DELETE FROM `goal_list` WHERE `id` = $id";
         if(mysqli_query($this->conn,$query)){
             $returnTask = "Task Deleted Successfully";
+            return $returnTask;
+        }
+    }
+
+    function displayCompleteTask(){
+        $query = "SELECT * FROM `goal_list` WHERE complete = 1";
+        if(mysqli_query($this->conn, $query)){
+            $returnTask = mysqli_query($this->conn, $query);
+            return $returnTask;
+        }
+    }
+
+    function completeTask($id){
+        $query = "UPDATE `goal_list` SET `complete`= 1 WHERE `id`= $id";
+        if(mysqli_query($this->conn, $query)){
+            $returnTask = "Task Completed Successfully";
             return $returnTask;
         }
     }
