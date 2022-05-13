@@ -64,4 +64,12 @@ class Admin
             return $returnTask;
         }
     }
+
+    function inCompleteTask($id){
+        $query = "UPDATE `goal_list` SET `complete`= 0 WHERE `id`= $id";
+        if(mysqli_query($this->conn, $query)){
+            $returnTask = "Task Incompleted Successfully";
+            return $returnTask;
+        }
+    }
 }

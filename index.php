@@ -23,6 +23,8 @@ if (isset($_GET['status'])) {
         $returnTaskMsg = $obj->deleteTask($get_id);
     } elseif ($_GET['status'] == 'complete') {
         $returnCompleteTaskMsg = $obj->completeTask($get_id);
+    }elseif($_GET['status'] == 'incomplete'){
+        $returnInCompleteTaskMsg = $obj->inCompleteTask($get_id);
     }
 }
 
@@ -136,6 +138,17 @@ endif;
 <!-- Design for Display Complete task -->
 <?php
 if ('completedTask' == $task):
+?>
+
+<!-- Msg for Incomplete data -->
+<?php
+if (isset($returnInCompleteTaskMsg)):
+?>
+            <div class="alert alert-dark" role="alert">
+                <?php echo $returnInCompleteTaskMsg; ?>
+            </div>
+        <?php
+endif;
 ?>
 
     <table class="table table-striped">
